@@ -42,3 +42,23 @@ button{
 input{
     border:1px solid #ccc;
 }
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding:0px 10px;
+    background: #fff;
+    display: flex;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+
+.logo, .menu-links{
+    display: inline-block;
+}
+
+.menu-links a{
+    margin: 0 10px;
+}

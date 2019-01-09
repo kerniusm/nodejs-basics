@@ -9,10 +9,6 @@ var LocalStrategy = require('passport-local').Strategy;
 var session = require('express-session');
 
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
- 
-
 
 app.use(session({
     secret: 'ManoSlaptasKeyKurioPagalbaUzkoduosVartotojuSlaptazodziuIDB',
@@ -31,14 +27,7 @@ mongoose.connect('mongodb://localhost/mano-projekto-db', { useNewUrlParser: true
 .then(() => console.log('Success connect to Database'))
 .catch((error)=> console.log(error));
 
-
-
-
-
-
-
 //apacioje esantis kodas veliau bus isskaidytas i kitus folderius...
-
 var port = 3000;
 
 app.listen(port, () => {console.log(`Server is running on http://localhost:${port}/`)});
@@ -46,28 +35,19 @@ app.listen(port, () => {console.log(`Server is running on http://localhost:${por
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
-
-
-
 var User = require('./models/User');
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-var auth = require('./controllers/AuthController');
-
-app.get('/', auth.home);
-app.get('/register', auth.register);
-app.post('/register', urlencodedParser, auth.doRegister);
-app.get('/login', auth.login);
-app.post('/login', urlencodedParser, auth.doLogin);
-app.get('/logout', auth.doLogout);
+//routes from index.js
+app.use('/', require('./routes/index'));
+app.use('/', require('./routes/users'));
 
 
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
-    next(err);
+    res.render('404');
 });

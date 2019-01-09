@@ -1,0 +1,18 @@
+<div class="navbar">
+    <div class="logo">
+        <a href="/">Logo</a>
+    </div>
+    <div class="spacer">
+
+    </div>
+    <div class="menu-links">
+        <% if(!user){ %>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        <% }else{ %>
+            <a href="/users">Users</a>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a> 
+        <% } %>
+    </div>
+</div>
