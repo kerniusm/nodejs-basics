@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="css/main.js"></script>
+</head>
+<body>
+    <div class="auth-form">
+        <h1>Prisijungimo forma</h1>
+        <form action="/login" method="POST">
+            <div class="form-control">
+                <label for="username">El. paštas</label>
+                <input id="username" type="text" name="username">
+            </div>
+            <div class="form-control">
+                <label for="password">Slaptažodis</label>
+                <input id="password" type="password" name="password">
+            </div>
+            <div class="actions">
+                <button type="submit">Prisijungti</button> 
+                <hr>
+                <a href="/register">Naujas vartotojas? Registruotis</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
