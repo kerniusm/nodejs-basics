@@ -6,7 +6,6 @@ authController = {};
 authController.home = function(req, res){
    res.render('index', {user: req.user});
 }
-
 authController.login = function(req, res){
    res.render('login');
 }

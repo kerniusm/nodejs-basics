@@ -11,7 +11,9 @@ userController.allUsers = (req, res)=>{
 }
 
 userController.myProfile =  (req, res) => {
-    res.render('profile');
+    User.findOne({name: req.params.name}, (err, userFromDB)=>{        
+      res.render('profile', {user: userFromDB});
+    })
 }
 
 module.exports = userController;

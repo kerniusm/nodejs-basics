@@ -15,7 +15,7 @@
         <% if(userList){ %>
             <ul>
                 <% for(let i = 0; i < userList.length; ++i){ %>
-                <li><%= userList[i].vardas,  userList[i].el_pastas %></li>
+                <a href="/profile/<%= userList[i].vardas %>"><li><%= userList[i].vardas,  userList[i].el_pastas %></li></a>
                 <% } %>
             </ul>
         <% } %>
