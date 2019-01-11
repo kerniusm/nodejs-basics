@@ -11,7 +11,13 @@ userController.allUsers = (req, res)=>{
 }
 
 userController.myProfile =  (req, res) => {
-    User.findOne({name: req.params.name}, (err, userFromDB)=>{        
+    let name;
+    if(req.params.name){
+        name = req.params.name
+    }else{
+        name = req.user.name
+    }
+    User.findOne({name: name}, (err, userFromDB)=>{        
       res.render('profile', {user: userFromDB});
     })
 }

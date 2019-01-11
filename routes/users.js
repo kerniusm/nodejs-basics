@@ -4,7 +4,7 @@ var users = require('../controllers/UserController');
 
 var authGuard = require('../guards/auth-guard');
 
-router.get('/profile/:name', authGuard.canActivate, users.myProfile );
+router.get('/profile/:name?', authGuard.canActivate, users.myProfile );
 router.get('/users', authGuard.canActivate , users.allUsers );
 
 
