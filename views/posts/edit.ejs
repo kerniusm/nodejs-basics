@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <script src="/js/main.js"></script>
+</head>
+<body>
+        <%- include('../_partials/navbar') %>
+
+        <div class="post-form">
+            <form action="/posts/edit/<%= post.id %>" method="POST" enctype="multipart/form-data">
+                <img src="<%= post['image_path'] %>" alt="">
+                <label for="">Jusu nuotrauka</label> <br>
+                <input type="file" name="post-image"> <br>
+                <label for="">Jusu nuotraukos aprasymas</label> <br>
+                <input type="text" name="post-description" value="<%= post['description'] %>"> <br>
+                <br>
+                <button type="submit">Skelbti</button>
+            </form>
+        </div>
+</body>
+</html>

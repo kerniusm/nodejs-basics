@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <script src="/js/main.js"></script>
+</head>
+<body>
+        <%- include('../_partials/navbar') %>
+
+        <img src="<%= post.image_path %>" alt="">
+        <h2><%= post.description %></h2>
+
+        
+        <a href="/posts/edit/<%= post.id %>">REDAGUOTI</a>
+
+        <a href="/posts/delete/<%= post.id %>">Delete</a>
+</body>
+</html>

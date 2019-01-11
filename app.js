@@ -44,6 +44,7 @@ passport.deserializeUser(User.deserializeUser());
 //routes from index.js
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/users'));
+app.use('/', require('./routes/posts'));
 
 
 app.use(function(req, res, next) {
